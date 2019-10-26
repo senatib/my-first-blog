@@ -1,16 +1,11 @@
-<html>
-  <head>
-    <title>Sena'nın blogu</title>
-  </head>
-  <body>
-    <div>
-      <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
-    <div>
-      <p>published: 26.10.2019, 15:50</p>
-      <h2><a href="">İkinci gönderi</a></h2>
-      <p>Merhaba!</p>
-      <p>Çalışıyor!</p>
-    </div>
-  </body>
-</html>
+<div>
+  <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+  <div>
+    <p>published: {{ post.published_date }}</p>
+    <h1><a href="">{{ post.title }}</a></h1>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+{% endfor %}
